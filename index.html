@@ -89,19 +89,6 @@
       animation: blink 2.8s ease-in-out infinite;
     }
 
-    .visitor-counter {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 0.8rem;
-      font-weight: 700;
-      opacity: 0.62;
-    }
-
-    .visitor-counter strong {
-      color: var(--gold);
-      font-weight: 900;
-    }
-
     .site-footer {
       margin-top: 30px;
       color: var(--muted);
@@ -268,12 +255,8 @@
       growing quietly
     </div>
 
-    <div class="visitor-counter" aria-live="polite">
-      <strong id="visitor-count">...</strong> Bug Hill visitors
-    </div>
-
     <footer class="site-footer">
-      Howdy, Bug Hill Copyright &copy; 2026 <a href="https://sncpkck.com">SNCKPCK LLC</a>
+      Howdy, Bug Hill Copyright &copy; 2026 <a href="https://snckpck.com">SNCKPCK LLC</a>
     </footer>
   </main>
   <script
@@ -281,21 +264,5 @@
     async
     src="https://gc.zgo.at/count.js"
   ></script>
-  <script>
-    fetch("https://plantpalboy.goatcounter.com/counter/TOTAL.json")
-      .then(function(response) {
-        if (!response.ok) {
-          throw new Error("Counter unavailable");
-        }
-
-        return response.json();
-      })
-      .then(function(data) {
-        document.getElementById("visitor-count").textContent = data.count;
-      })
-      .catch(function() {
-        document.getElementById("visitor-count").textContent = "...";
-      });
-  </script>
 </body>
 </html>
